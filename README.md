@@ -1,6 +1,22 @@
 # OMENAKO
 ### All in one access room for Omenako
 
+## Install and run
+```
+$ git clone https://github.com/Obed101/omenako.git
+
+$ cd omenako
+
+$ pip install -r requirements.txt
+
+$ python -m utils
+
+# Flask app will now be running. Go to https://localhost:5000 and start work!
+# All the best
+# Feel free to make a pull request
+
+```
+
 This is a Python flask application I created for almost all activities that can be done online in Omenako
 
 
