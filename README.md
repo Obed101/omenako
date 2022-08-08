@@ -11,7 +11,7 @@ $ pip install -r requirements.txt
 
 $ python -m utils
 
-# Flask app will now be running. Go to https://localhost:5000 and start work!
+# Flask app will now be running. Go to http://localhost:5000 and start work!
 # All the best
 # Feel free to make a pull request
 
