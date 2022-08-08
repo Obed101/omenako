@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}"> -->
+<link rel="shortcut icon" href="/favicon.ico" type="favicon">
+        <div class="p-5 bg-light mx-auto border my-5" style="width: fit-content;">
+            {{ form.hidden_tag() }}
+            <h5 class="py-4"> Login To Gain Access To The Site</h5>
+            <form method="post" novalidate>
+                <p>
+                    {{ form.firstname(size=40, placeholder='Your first name') }}
+                </p>
+                {{ form.lastname(size=40, placeholder='Your last name, example: Tetteh') }} <hr>
+
+                {{ form.question1(size=40, placeholder='Your best food', required='required')}} <br>
+                {{form.submit(class='btn btn-primary m-3 float-right', value='Login')}}
+            </form>
+            <a href="{{ url_for('request_account')}} " class="mt-4 d-block">I don't have an account</a>
+        </div>
+{% endblock %}
+

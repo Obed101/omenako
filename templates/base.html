@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }} | Omenako</title>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel= "stylesheet" type= "text/css" href="">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Margarine&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="navbar bg-secondary absolute-top p-1 fixed-top border-bottom">
+            <div class="nav-left navbar-brand text-white">
+                <a class="text-white fa fa-home fa-2x ml-3" href="/"></a>
+            </div>
+           <div class="text-white">
+              <a class="nav-item text-white p-2 fa fa-book fa-2x" title="Assignments" href="/assignments"></a>
+              <a class="nav-item text-white p-2 fa fa-book-reader fa-2x" title="Readers" href='{{ url_for("readers") }}' target="_blank"></a>
+              <a class="nav-item text-white p-2 fa fa-user-tie fa-2x" href='{{ url_for("field_lead") }}' title="Field Service Leaders" target="_blank"></a>
+              <a class="nav-item text-white p-2 fa fa-user-friends fa-2x" title="All Users" href="/users"></a>
+              <a class="nav-item text-white p-2 fa fa-mail-bulk fa-2x" title="Notice Board" href='{{ url_for("notices") }}'></a>
+              {% if current_user.is_active %}
+              <a href="{{ url_for('profile')}}" class="nav-item text-white p-2 fa fa-id-card fa-2x mr-2"
+              title="Your Profile"></a>
+              <a class="float-right nav-item text-white p-2 fa fa-sign-out-alt fa-2x" title="Log Out" href='{{ url_for("logout") }}'></a>
+              {% else %}
+              <a class="float-right nav-item text-white p-2 fa fa-2x fa-sign-in-alt"title='Log In' href='{{ url_for("login") }}'></a>
+              {% endif %}
+            </div>     
+        </div>
+        <div class="my-5 py-1"></div>
+        <span class="text-capitalize fixed-bottom text-primary m-5" style="opacity: .5;width: fit-content;">{{ current_user.firstname }} {{ current_user.lastname }}</span>
+
+        {% for message in get_flashed_messages() %}
+          <div class="alert alert-secondary text-center px-5 w-50 m-auto" style="margin-top: 1in;">{{ message }} </div><br>
+        {% endfor %}
+
+        {% block content %}
+        {% endblock %}
+    </body>
+    <footer class="footer text-center p-2 mt-5 mx-auto bg-light border-top relative">
+        Copyright &copy; Omenako Congregation | Go to <a href="https://www.jw.org">jw.org</a>
+        to learn about Jehovah's Witnesses
+    </footer>
+</html>

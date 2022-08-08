@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+        <div style="width: fit-content;" class="p-5 bg-light mx-auto border px-5 my-4">
+            <p class="text-primary"> Make neccessary changes to your account here</p>
+            {{ form.hidden_tag() }}
+            <form method="post">
+                <p>
+                    {{ form.firstname(size=40, value=current_user.firstname) }}<br>
+                </p>
+                    {{ form.lastname(size=40, value=current_user.lastname) }}<br>
+                <p>
+                    {{ form.email(size=40, value=current_user.email or '', class='my-3', placeholder='Add email address') }}<br>
+                </p>
+                <p> Change your favorite food <br>
+                    {{ form.question1(size=40, placeholder='Your new favorite food') }}<br>
+                </p>
+                <p> 
+                    {{ form.confirm(size=40, class='b-none', placeholder='Repeat the new answer') }}<br>
+                </p>
+                {{ current_user.role }} in Omenako <br>
+    <a href="{{ url_for('all_users') }}" class="float-left"><span class="bg-white m-1 border btn">Cancel</span></a>
+    {{ form.submit(class='btn btn-primary m-1 float-right', value='Save') }}
+            </form>
+        </div>
+{% endblock %}

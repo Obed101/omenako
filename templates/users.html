@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<h4 class="border-bottom p-5 mx-auto bg-light text-center">All persons in Omenako Congregation with account on this site</h4>
+<table class="table table-hover table-striped table-secondary mt-5 w-75 mx-auto">
+    <thead class="sticky-top bg-secondary text-white"style='top: 50px;' >
+        <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">In Omenako</th>
+            <th scope="col">Role</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.firstname }}</td>
+            <td>{{ user.lastname }} {% if current_user.user_id == user.user_id %} &nbsp; (You) {% endif %}</td>
+            <td>{% if user.omenako %} Yes {% else %} No {% endif %} </td>
+            <td>{{ user.role }}</td>
+            <td> {% if current_user.user_id in admins or user.user_id not in admins %}
+                <a href="/users/{{ user.user_id }}/delete"><button title="Delete" class="btn text-danger p-1 fa fa-trash-alt"></button></a>
+                {% endif %}
+                {% if current_user.user_id in admins and not user.user_id == current_user.user_id %}
+                <a href="/users/{{ user.user_id }}/reset_question"><button title="Reset {{ user.firstname }}'s question" class="btn text-primary p-1 fa fa-undo"></button></a>
+                {% endif %}
+                {% if current_user.user_id == user.user_id %}
+                <a href="{{ url_for('profile') }}"><button class="btn text-primary p-1 fa fa-edit" title="Edit"></button></a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table> {% if current_user.role == 'Elder' %}
+<a href="{{ url_for('add_user')}}">
+    <button class="btn text-primary position-fixed rounded-circle p-3 border fa fa-2x fa-user-plus"
+    style="right: 5%;bottom: 25px;z-index: 5; opacity: .65;"></button>
+</a>
+{% endif %}
+
+<p class="text-center mt-5">Please <a class="p-1 bg-light font-weight-bold " href="/notices/new">report</a> if you find a non-authorized user in the list</p>
+
+{% endblock %}

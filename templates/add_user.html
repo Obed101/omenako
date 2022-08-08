@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h4 class="text-center py-3 bg-light border-bottom">New members are now not allowed to create their own account</h4>
+        <div style="width: fit-content;" class="p-5 bg-light mx-auto border my-4">
+            <p class="text-primary font-weight-bold"> Please fill this form to add someone</p>
+            {{ form.hidden_tag() }}
+            <form method="post">
+                <p>
+                    {{ form.firstname(size=40, placeholder='His first name. Example: John') }}<br>
+                </p>
+                    {{ form.lastname(size=40, placeholder='His last name. Example: Ayisi') }}<br>
+                <p>
+                    {{ form.email(size=40, placeholder='His email address (optional)', class='my-3') }}<br>
+                </p>
+                <p><b><i>{{ form.question1.label() }}</i></b> <br>He <b>should</b> change that after logging in<hr>
+
+                {{ form.role.label }}
+                {{ form.role() }}
+                {{ form.omenako() }} {{ form.omenako.label }}
+                <div>{{ form.submit(class='btn btn-primary float-right', value='Add') }}</div>
+                
+            </form>
+        </div>
+{% endblock %}

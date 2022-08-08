@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+{{ form.hidden_tag() }}
+
+<div class="p-5 bg-light mt-2 m-auto border" style="width: fit-content;">
+  <h4>Add an Assignment</h4>
+  <form method="post">
+    Choose Date: {{form.date(class='my-2', required='required') }} <br>
+
+    <select name="section" id="section" style="width:33ex"
+     class='py-1 my-2' required>
+      <option value="">Select section</option>
+      <option value="Treasures From Bible">Bible Mu Akorade</option>
+      <option value="Field Ministry">Ma Wani Nku Asenka Ho</option>
+      <option value="Living As Christains">Kristofo Abrabo</option>
+    </select><br>
+    <select name="typ" id="name" class='my-2 py-1'style="width:33ex" required>
+      <option value="">Select assignment name</option>
+      <option value="Prayer">Mpaebo</option>
+      <option value="Talk - Treasures">Bible Mu Akorade</option>
+      <option value="Digging">Tweetwee Bible Mu</option>
+      <option value="Bible Reading">Bible Akenkan</option> <hr>
+      <option value="Initial Call">Nsrahwe A Edi Kan</option>
+      <option value="Return Visit">Sankohwe</option>
+      <option value="Bible Studies">Bible Adesua</option>
+      <option value="Talk">Okasa</option> <hr>
+      <option value="Living as Christians-1" class="border-top">Kristofo Abrabo-1</option>
+      <option value="Living as Christians-2">Kristofo Abrabo-2</option>
+      <option value="Congregation Needs">Asafo Mu Ahiade</option>
+      <option value="Cong. Bible Studies">Asafo Bible Adesua</option>
+      <option value="Prayer">Mpaebo</option>
+    </select>
+<br>
+    {{ form.name(placeholder='Name', class='my-2', size=30, required='required') }}<br>
+    {{ form.assistant(placeholder='Assistant', class='my-2', size=30) }}<br>
+    Minutes: {{ form.tim(class='my-2', value=2 ) }}<br>
+    
+    <a href="{{ url_for('assignments') }}" class="float-left"><span class="bg-white mt-2 border btn">Cancel</span></a>
+    {{ form.submit(class='btn btn-primary float-right mt-2') }}
+  </form>
+</div>
+{% endblock %}

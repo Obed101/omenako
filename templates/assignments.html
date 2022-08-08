@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h4 class="pt-4 text-center mx-auto bg-light mb-0" >Find all Assigned Assignments for Omenako Congregation</h4>
+      <p class="pb-4 bg-light pt-0 text-center text-secondary">You don't need an account to view this page</p><hr>
+<table class="table table-secondary table-hover table-striped mx-auto mw-100" style="width: 88%;">
+  <thead class="sticky-top bg-secondary text-white"style='top: 48px;'>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Section</th>
+      <th scope="col">Assignment</th>
+      <th scope="col">Name</th>
+      <th scope="col">Assistant</th>
+      <th scope="col">Time</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for ass in assignments %}
+      <tr>
+          <td>{{ ass.date }}</td>
+          <td>{{ ass.section }} </td>
+          <td>{{ ass.typ }} </td>
+          <td>{{ ass.name }}</td>
+          <td>{{ ass.assist }}</td>
+          <td>{{ ass.tim }} minutes</td>
+          <td><a href="/assignments/{{ ass.id }}/delete" title="Delete"><button class="btn text-danger fa fa-trash-alt"></button></a></td>
+      </tr>
+      {% endfor %}
+  </tbody>
+</table>
+{% if current_user.role == 'Elder' %}
+<a href="{{ url_for('new_assignment')}}">
+  <button class="btn text-primary position-fixed rounded-circle border p-3 fa fa-plus fa-2x"
+    style="right: 5%;bottom: 25px;z-index: 5; opacity: .65;"></button>
+</a>
+{% endif %}
+{% endblock %}

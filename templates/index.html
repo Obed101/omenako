@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h4 class="border p-5 mx-auto bg-light text-center">Welcome to the Access room for Omenako Congregation</h4>
+<hr>
+<div class="border p-5 mx-auto" style="width:60%;"> 
+    <h4 class="p-2 text-center">Navigate With Ease</h4>
+    <p class="text-primary text-center">You can open <b> assignments</b>, <b> readers</b> and <b> field service schedule</b> without an account</p>
+    <a href="{{ url_for('login') }}"><button class="btn btn-primary m-auto p-4"style="width:40%;"> Log In</button></a>
+    {% if current_user.is_active %}
+    <a href="{{ url_for('add_user') }}"><button class="btn btn-primary m-auto p-4 float-right"style="width:40%;"> Add An Account</button></a><hr>
+    {% else %}
+    <a href="/request_account"><button class="btn btn-primary m-auto p-4 float-right"style="width:40%;"> Request An Account</button></a><hr>
+    {% endif %}
+    <a href="{{ url_for('assignments')}}"><button class="btn btn-primary m-auto  p-4 float-right">Assignments</button></a>
+    <a href="/notices"><button class="btn btn-primary mx-auto p-4">Announcements</button></a><hr>
+    <a href="{{ url_for('readers') }}" target="_blank"><button class="btn btn-primary m-auto  p-4 float-right"> Readers</button></a>
+    <a href="{{ url_for('field_lead') }}"><button class="btn btn-primary mx-auto p-4">Field Service Schedule</button></a><hr>
+</div>
+        <!-- Google Map --> <div class="text-center mt-3 font-weight-bold">Kindom Hall Location</div>
+<div class="mapouter my-5 bg-secondary mx-auto"><div class="gmap_canvas"><iframe width="600" height="336" id="gmap_canvas" src="https://maps.google.com/maps?q=Kingdom%20hall%20omenako,%20ghana&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123 movies</a><br><style>.mapouter{position:relative;text-align:right;height:336px;width:600px;}</style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:336px;width:600px;}</style></div></div>
+{% endblock %}

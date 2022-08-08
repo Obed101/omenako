@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<h4 class="p-4 text-center mx-auto text-bold bg-light">Find all notices for Omenako Congregation</h4>
+    
+          <!-- Account Request Notices -->
+    {% for note in Notice.query.all() %}
+    {% if not note.poster %}
+    <div class="border p-3 d-inline-block m-3" style="width: fit-content;">
+    <div class='bg-dark p-3 text-white'style="width: fit-content;">{{ note.subject }} &nbsp;
+      <a href="notices/{{ note.id }}/delete">
+        <button class="btn float-right py-1 text-danger fa fa-trash-alt fa-2x" title="Delete"></button></a>
+        <a href="/users/new">
+          <button class="btn float-right mx-1 py-1 text-success fa fa-user-plus fa-2x" title="Add Him"></button></a>
+    </div>
+    <div>{{ note.message|safe }}</div>
+    {% endif %}
+    </div>
+    {% endfor %}
+
+  <hr>
+        <!-- Officially Posted Notices -->
+<div class="mx-4">
+  {% for notice in Notice.query.order_by(Notice.id.desc()).all() %}
+  {% if notice and notice.poster %}
+  <b>{{ notice.subject.upper() }}</b> <a href="notices/{{ notice.id }}/delete">
+    <button class="btn float-right border text-danger fa fa-trash-alt fa-2x bg-light" title="Delete"></button></a>
+  <div class="border p-1 bg-light">{{ notice.message|safe }}</div>
+  From: <i>{{ notice.poster }}</i>
+  <div class="float-right font-weight-light"> {{ notice.date }} </div>
+  <hr>
+  {% endif %}
+  {% endfor %}
+<a href="{{ url_for('new_notice') }}">
+  <button class="btn text-primary position-fixed rounded-circle p-3 border-success fa fa-comment fa-2x"
+    style="right: 5%;bottom: 25px;z-index: 5; opacity: .65;" title="Add new"></button>
+</a>
+</div>
+{% endblock %}
