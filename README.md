@@ -25,6 +25,12 @@ This is a Python flask application I created for almost all activities that can 
 
 ## HOW TO USE THE WEB APP?
 
+### New Feature!
+
+- Go Back :back: button added for easy navigation
+- Go Forward :forward: button added for easy navigation
+
+
 ### Create An Account 
  - Click on the Users icon on the navigation bar
  - If you have the required previleges, an Add User icon will be available on the right bottom side.
