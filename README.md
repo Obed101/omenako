@@ -28,10 +28,11 @@ This is a Python flask application I created for almost all activities that can 
 ### Create An Account 
  - Click on the Users icon on the navigation bar
  - If you have the required previleges, an Add User icon will be available on the right bottom side.
+ OB
  This button will take you to a form you'll need to fill to add a new user to the list
  - That user will be given a default login credential that will be shown to you during the account creation process. 
  - On successful submit, give the credential to the new user you added and ask him to go to his profile to change it.
- 
+ OAA
 ### Delete a User or Reset a User's Credential (Admin Only)
  - If you are an Admin, You will see a Trash icon and an Undo icon on the Action column
  - Those icons are used to delete a user and reset a user's credential respectively
@@ -56,7 +57,7 @@ This is a Python flask application I created for almost all activities that can 
  - Click the New Message icon in the right bottom
  - Fill in the fields for Subject and Body
  
- ![new_notice](https://user-images.githubusercontent.com/84608830/183515984-4a8fc9da-a7ae-4fb9-b5e5-cf801dbf91f9.png)
+ ![nBOBew_notice](https://user-images.githubusercontent.com/84608830/183515984-4a8fc9da-a7ae-4fb9-b5e5-cf801dbf91f9.png)
 
 ### View Readers or Service Schedule
  - Click on the Readers icon Or the Service Lead icon

@@ -11,7 +11,9 @@
       <th scope="col">Name</th>
       <th scope="col">Assistant</th>
       <th scope="col">Time</th>
+      {% if current_user.is_active %}
       <th scope="col">Action</th>
+      {% endif %}
     </tr>
   </thead>
   <tbody>
@@ -23,7 +25,9 @@
           <td>{{ ass.name }}</td>
           <td>{{ ass.assist }}</td>
           <td>{{ ass.tim }} minutes</td>
+          {% if current_user.is_active %}
           <td><a href="/assignments/{{ ass.id }}/delete" title="Delete"><button class="btn text-danger fa fa-trash-alt"></button></a></td>
+          {% endif %}
       </tr>
       {% endfor %}
   </tbody>

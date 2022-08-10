@@ -31,6 +31,10 @@
             </div>     
         </div>
         <div class="my-5 py-1"></div>
+        <div class="float-left position-fixed text-white btn btn-primary p-3 fa fa-arrow-left rounded-circle ml-3" title="Go back" 
+        onclick="history.back()"style='opacity: .3;'></div>
+        <div class="float-right position-fixed text-white btn btn-primary p-3 fa fa-arrow-right rounded-circle mr-3" title="Go forward" onclick="history.forward()"
+         style="right: 12px; opacity: .3;"></div>
         <span class="text-capitalize fixed-bottom text-primary m-5" style="opacity: .5;width: fit-content;">{{ current_user.firstname }} {{ current_user.lastname }}</span>
 
         {% for message in get_flashed_messages() %}
