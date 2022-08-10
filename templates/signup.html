@@ -17,10 +17,11 @@
                 <p> 
                     {{ form.confirm(size=40, class='b-none', placeholder='Repeat the answer') }}<br>
                 </p>
-                {{ form.role.label }}
+                Are you an Elder or MS
                 {{ form.role() }}
-                {{ form.omenako() }} {{ form.omenako.label }}
-                <div>{{ form.submit(class='btn btn-primary m-3 float-right') }}</div>
+                {{ form.omenako(required='required') }} Confirm you're in Omenako
+                <div><div class="btn btn-light border float-left m-3 p-2" onclick="history.back()">Cancel</div>
+                {{ form.submit(class='btn btn-primary m-3 float-right') }}</div>
             </form>
             <a class="mt-3 d-inline-block" href="{{ url_for('login')}}">I already have an account</a>
         </div>

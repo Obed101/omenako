@@ -13,8 +13,9 @@
 
                 {{ form.question1(size=40, placeholder='Your best food', required='required')}} <br>
                 {{form.submit(class='btn btn-primary m-3 float-right', value='Login')}}
+                <div class="btn btn-light border float-left m-3 p-2" onclick="history.back()">Cancel</div>
             </form>
-            <a href="{{ url_for('request_account')}} " class="mt-4 d-block">I don't have an account</a>
+            <a href="{{ url_for('request_account')}} " class="mt-4 d-block">Get a new account</a>
         </div>
 {% endblock %}
 

@@ -2,7 +2,7 @@
 {% block content %}
 {{ form.hidden_tag() }}
 
-<div class="p-5 bg-light mt-2 m-auto border" style="width: fit-content;">
+<div class="p-5 bg-light m-auto my-4 border" style="width: fit-content;">
   <h4>Add an Assignment</h4>
   <form method="post">
     Choose Date: {{form.date(class='my-2', required='required') }} <br>
@@ -18,7 +18,7 @@
       <option value="">Select assignment name</option>
       <option value="Prayer">Mpaebo</option>
       <option value="Talk - Treasures">Bible Mu Akorade</option>
-      <option value="Digging">Tweetwee Bible Mu</option>
+      <option value="Digging For Gem">Tweetwee Bible Mu</option>
       <option value="Bible Reading">Bible Akenkan</option> <hr>
       <option value="Initial Call">Nsrahwe A Edi Kan</option>
       <option value="Return Visit">Sankohwe</option>
@@ -35,7 +35,7 @@
     {{ form.assistant(placeholder='Assistant', class='my-2', size=30) }}<br>
     Minutes: {{ form.tim(class='my-2', value=2 ) }}<br>
     
-    <a href="{{ url_for('assignments') }}" class="float-left"><span class="bg-white mt-2 border btn">Cancel</span></a>
+    <div onclick="history.back()" class="float-left bg-white mt-2 border btn">Cancel</div>
     {{ form.submit(class='btn btn-primary float-right mt-2') }}
   </form>
 </div>

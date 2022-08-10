@@ -18,7 +18,7 @@
                     {{ form.confirm(size=40, class='b-none', placeholder='Repeat the new answer') }}<br>
                 </p>
                 {{ current_user.role }} in Omenako <br>
-    <a href="{{ url_for('all_users') }}" class="float-left"><span class="bg-white m-1 border btn">Cancel</span></a>
+    <div onclick="history.back()" class="float-left bg-white m-1 border btn">Cancel</div>
     {{ form.submit(class='btn btn-primary m-1 float-right', value='Save') }}
             </form>
         </div>

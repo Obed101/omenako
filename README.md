@@ -37,7 +37,7 @@ This is a Python flask application I created for almost all activities that can 
  This button will take you to a form you'll need to fill to add a new user to the list
  - That user will be given a default login credential that will be shown to you during the account creation process. 
  - On successful submit, give the credential to the new user you added and ask him to go to his profile to change it.
- OAA
+
 ### Delete a User or Reset a User's Credential (Admin Only)
  - If you are an Admin, You will see a Trash icon and an Undo icon on the Action column
  - Those icons are used to delete a user and reset a user's credential respectively
@@ -90,6 +90,6 @@ This is a Python flask application I created for almost all activities that can 
 - - That indicates full name of the current user
      
 >>>>>> Have a good Experience  
->>>>>> Give One STAR :star: if you like the project
+>>>>>> Give one STAR :star: if you like the project
 
 

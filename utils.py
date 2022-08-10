@@ -68,6 +68,8 @@ def home():
     return render_template('index.html', title='Home')
 
 
+        ###### ASSIGNMENTS ACTIVITIES ######
+
 @app.route('/assignments')
 def assignments():
     """Displays The Assignments"""
@@ -98,13 +100,13 @@ def new_assignment():
 @login_required
 def delete_assignment(id):
     """Deletes an assignment"""
-    assign = Assignment.query.filter_by(id=id).first()
-    assignee = assign.name
     if current_user.role == 'Elder':
         try:
+            assign = Assignment.query.filter_by(id=id).first()
+            assignee = assign.name
             assign.delete()
         except AttributeError:
-            """To disable error if someone try to delete a non existing node"""
+            """To disable error if someone tries to delete a non existing node"""
             flash('It looks like that assignment does not exist')
             return redirect(url_for('assignments'))
         flash(f'You just deleted {assignee}\'s assignment')
@@ -112,6 +114,8 @@ def delete_assignment(id):
         flash('Please ask Isaac Donkor or Moses Banfo to delete that')
     return redirect(url_for('assignments'))
 
+
+        ##### NOTICE BOARD ACTIVITIES #####
 
 @app.route('/notices')
 @login_required
@@ -158,6 +162,8 @@ def delete_notice(id):
     return redirect(url_for('notices'))
 
 
+        ##### PDF ROUTES #####
+
 @app.route('/readers')
 def readers():
     """Returns readers page in pdf"""
@@ -173,6 +179,8 @@ def field_lead():
     pth = os.path.abspath(os.getcwd()) + '/templates/'
     return send_from_directory(pth, 'field_lead.pdf')
 
+
+        ##### USERS AND ACCOUNTS #####
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():

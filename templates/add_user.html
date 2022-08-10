@@ -12,13 +12,14 @@
                     {{ form.lastname(size=40, placeholder='His last name. Example: Ayisi') }}<br>
                 <p>
                     {{ form.email(size=40, placeholder='His email address (optional)', class='my-3') }}<br>
-                </p>
+                </p> <hr>
                 <p><b><i>{{ form.question1.label() }}</i></b> <br>He <b>should</b> change that after logging in<hr>
 
                 {{ form.role.label }}
                 {{ form.role() }}
-                {{ form.omenako() }} {{ form.omenako.label }}
-                <div>{{ form.submit(class='btn btn-primary float-right', value='Add') }}</div>
+                {{ form.omenako() }} {{ form.omenako.label }} <br>
+                <div class="btn btn-light border float-left  p-2" onclick="history.back()">Cancel</div>
+                <div>{{ form.submit(class='btn btn-primary float-right mr-2', value='Add') }}</div>
                 
             </form>
         </div>
