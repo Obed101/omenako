@@ -17,7 +17,7 @@ $ python -m utils
 
 ```
 
-This is a Python flask application I created for almost all activities that can be done online in Omenako
+This is a Python flask application I created for almost all activities that can be done online in Omenako Congregation of Jehovah's Witnesses
 
 
 ![Screenshot (21)](https://user-images.githubusercontent.com/84608830/183518300-d266edbb-a0a3-446a-be66-6d8872a4d40a.png)
@@ -25,7 +25,7 @@ This is a Python flask application I created for almost all activities that can 
 
 ## HOW TO USE THE WEB APP?
 
-### New Feature!
+### New Features!
 
 - Go Back :back: button added for easy navigation
 - Go Forward :forward: button added for easy navigation
@@ -33,8 +33,7 @@ This is a Python flask application I created for almost all activities that can 
 
 ### Create An Account 
  - Click on the Users icon on the navigation bar
- - If you have the required previleges, an Add User icon will be available on the right bottom side.
- OB
+ - If you have the required privileges, an Add User icon will be available on the right bottom side.
  This button will take you to a form you'll need to fill to add a new user to the list
  - That user will be given a default login credential that will be shown to you during the account creation process. 
  - On successful submit, give the credential to the new user you added and ask him to go to his profile to change it.
@@ -54,7 +53,7 @@ This is a Python flask application I created for almost all activities that can 
  - Password is not used in this site.
  - You will provide the name of your favorite food instead
 
-![notice_new](https://user-images.githubusercontent.com/84608830/183515847-87aae350-14ac-4f86-8ca6-854186146638.png)
+![make_changes](https://user-images.githubusercontent.com/84608830/183515847-87aae350-14ac-4f86-8ca6-854186146638.png)
 
 
 
@@ -63,7 +62,8 @@ This is a Python flask application I created for almost all activities that can 
  - Click the New Message icon in the right bottom
  - Fill in the fields for Subject and Body
  
- ![nBOBew_notice](https://user-images.githubusercontent.com/84608830/183515984-4a8fc9da-a7ae-4fb9-b5e5-cf801dbf91f9.png)
+![new_notice](https://user-images.githubusercontent.com/84608830/183515984-4a8fc9da-a7ae-4fb9-b5e5-cf801dbf91f9.png)
+![Screenshot (24)](https://user-images.githubusercontent.com/84608830/183595506-66d64299-1151-4dda-97a7-fdf016c50836.png)
 
 ### View Readers or Service Schedule
  - Click on the Readers icon Or the Service Lead icon
@@ -81,12 +81,12 @@ This is a Python flask application I created for almost all activities that can 
 
 #### To delete
 - Click on the Trash icon.
-- If you have the required priveleges to do so, the assignment will be removed from database and you'll see that.
+- If you have the required privileges to do so, the assignment will be removed from database and you'll see that.
 
- ![Screenshot (22)](https://user-images.githubusercontent.com/84608830/183521137-730dedc2-4bb6-407d-bd27-8798b0a00a67.png)
+![Screenshot (22)](https://user-images.githubusercontent.com/84608830/183521137-730dedc2-4bb6-407d-bd27-8798b0a00a67.png)
 
 ### Who Is The Current User?
-- - Check The Screenshots above. You will see a watermark in all the pages. It is located on the left bottom side of the page
+- - Check all the screenshots above. You will see a watermark in all the pages. It is located on the left bottom side of the page
 - - Have a good Experience
 
 
