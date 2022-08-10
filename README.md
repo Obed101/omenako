@@ -86,7 +86,10 @@ This is a Python flask application I created for almost all activities that can 
 ![Screenshot (22)](https://user-images.githubusercontent.com/84608830/183521137-730dedc2-4bb6-407d-bd27-8798b0a00a67.png)
 
 ### Who Is The Current User?
-- - Check all the screenshots above. You will see a watermark in all the pages. It is located on the left bottom side of the page
-- - Have a good Experience
+- Check all the screenshots above. You will see a watermark in all the pages. It is located on the left bottom side of the page
+- - That indicates full name of the current user
+     
+>>>>>> Have a good Experience  
+>>>>>> Give One STAR :star: if you like the project
 
 
