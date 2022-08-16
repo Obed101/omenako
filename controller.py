@@ -4,7 +4,7 @@ from flask_ckeditor import CKEditor
 from flask_login import current_user
 
 app = Flask(__name__)
-# CKEditor(app)
+
 app.config['CKEDITOR_PKG_TYPE'] = 'basic'
 app.config['DEBUG'] = True
 app.config['SECRET_KEY'] = 'no one can guess this key im using for this project'

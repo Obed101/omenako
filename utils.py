@@ -122,7 +122,7 @@ def delete_assignment(id):
 def notices():
     """Notice page handler"""
     user_form = User()
-    return render_template('notices.html', title='Notices', form=user_form, Notice=Notice, db=db, str=str)
+    return render_template('notices.html', title='Notices', form=user_form, Notice=Notice)
 
 
 @app.route('/notices/new', methods=['GET', 'POST'])
